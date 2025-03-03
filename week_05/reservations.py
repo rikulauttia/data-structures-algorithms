@@ -1,20 +1,15 @@
 import random
 
 def check_overlapping(reservations):
-    # Jos varauksia on vähemmän kuin 2, ei voi olla päällekkäisyyksiä
     if len(reservations) < 2:
         return False
     
-    # Järjestetään varaukset alkupäivän mukaan
     sorted_reservations = sorted(reservations)
     
-    # Käydään läpi järjestetyt varaukset
     for i in range(len(sorted_reservations)-1):
         current_start, current_end = sorted_reservations[i]
         next_start, next_end = sorted_reservations[i+1]
         
-        # Jos nykyisen varauksen loppupäivä on suurempi tai yhtä suuri kuin
-        # seuraavan varauksen alkupäivä, varaukset menevät päällekkäin
         if current_end >= next_start:
             return True
     

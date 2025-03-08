@@ -1,0 +1,1 @@
+# checks element one by one sorts them in a gradually built-up sorted array. so it builds up sorted array one element by time.
